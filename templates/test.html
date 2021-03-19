@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<style>
+		@font-face {
+			font-family: 'pokemon-red';
+			src: url(https://cdn.rawgit.com/shelune/pokedex-entry/master/pkm-red-font.ttf) format("truetype");
+		}
+    </style>
+
+
+	<link href="static/styles.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}" defer></script>
+	<link rel="shortcut icon" href="#">
+</head>
+<body>
+	<div class='frame poke-list'>
+		<div class="entry-container">
+			<div class="entry-left">
+				{% for pokeId, pokeName in zip(pokeIdList, pokeNameList) %}
+					<p class='id-item'>{{ pokeId }}</p>
+					<p class='list-item'>{{ pokeName }}</p>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<div class="frame">
+		<div class="entry-container">
+			<div class="entry--upper">
+				<div class="upper__left">
+					<img src="https://cdn.rawgit.com/shelune/shelune.github.io/master/Spr_1g_001.png" alt="sprite" class="poke-image"/>
+					<span class="poke-id">No.001</span>
+				</div>
+				<div class="upper__right">
+					<h1 class="poke-name"></h1>
+					<h1 class="poke-genus"></h1>
+					<h1 class="height">HT<span class="poke-height"> 2'04''</span>'</h1>
+					<h1 class="weight">WT<span class="poke-weight"> 15.2 l b</span></h1>
+				</div>
+			</div>
+			<div class="entry__hr">
+				<span class="hr__block hr__block-0"></span>
+				<span class="hr__block hr__block-1"></span>
+				<span class="hr__block hr__block-2"></span>
+				<span class="hr__block hr__block-3"></span>
+				<span class="hr__block hr__block-4"></span>
+				<span class="hr__block hr__block-5"></span>
+				<span class="hr__block hr__block-6"></span>
+				<span class="hr__block hr__block-7"></span>
+			</div>
+			<div class="entry--lower">
+				<div class="lower__content">
+					<p class="poke-description-p1">	A strange seed was planted on its back at birth.</p>
+					<p class="poke-description-p2">The plant sprouts and grows with this Pokémon.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

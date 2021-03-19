@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<style>
+		@font-face {
+			font-family: 'pokemon-red';
+			src: url(https://cdn.rawgit.com/shelune/pokedex-entry/master/pkm-red-font.ttf) format("truetype");
+		}
+	</style>
+	<link href="static/styles.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}" async></script>
+	<link rel="shortcut icon" href="#">
+	<!-- <meta name="viewport" content="width=device-width" />
+	<style>
+		@media screen and (max-width: 639px) {
+			body {
+				flex-direction: column;
+			}
+		}
+		@media screen and (min-width: 768px) and (max-width: 1024px) {
+			body {
+				flex-direction: row;
+				}
+			}
+		@media screen and (min-width: 1024px) and (max-width: 1600px) {
+			body {
+				flex-direction: row;
+			}
+		}
+		@media screen and (min-width: 1600px) {
+			body {
+				flex-direction: row;
+			}
+		}
+	</style> -->
+</head>
+
+<body>
+	<div class='frame'>
+		<div class="list-entry-container">
+			<div class="list-entry-left">
+				<p class='id-item'>contents</p>
+				{% for pokeId, pokeName in zip(pokeIdList, pokeNameList) %}
+					<p class='id-item'>{{ pokeId }}</p>
+					<img class="pokeball" src="static/images/pokeball.png">
+					<p class='list-item'>{{ pokeName }}</p>
+				{% endfor %}
+			</div>
+			<div class="list-entry__hr">
+				<span class="list-hr__block list-hr__block-0"></span>
+				<span class="list-hr__block list-hr__block-1"></span>
+				<span class="list-hr__block list-hr__block-2"></span>
+				<span class="list-hr__block list-hr__block-3"></span>
+				<span class="list-hr__block list-hr__block-4"></span>
+				<span class="list-hr__block list-hr__block-5"></span>
+				<span class="list-hr__block list-hr__block-6"></span>
+				<span class="list-hr__block list-hr__block-7"></span>
+			</div>
+			<div class="right-entry-container">
+				<div class="list-entry-right">
+					<p>seen</p>
+					<p>151</p>
+					<br>
+					<p>own</p>
+					<p>151</p>
+				</div>
+				<div class="horizontal-hr-thin"></div>
+				<div class="horizontal-hr-thick"></div>
+				<div class="list-entry-right">
+					<p>data</p>
+					<br>
+					<p class="poke-cry-button">cry</p>
+					<br>
+					<p>area</p>
+					<br>
+					<p>quit</p>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="frame">
+		<div class="entry-container">
+			<div class="entry--upper">
+				<div class="upper__left">
+					<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/red-blue/gray/1.png" alt="sprite" class="poke-image"/>
+					<span class="poke-id">No. 001</span>
+				</div>
+				<div class="upper__right">
+					<h1 class="poke-name">bulbasaur</h1>
+					<h1 class="poke-genus">seed</h1>
+					<h1 class="height">HT<span class="poke-height">2' 04'</span>'</h1>
+					<h1 class="weight">WT<span class="poke-weight">15.0 l b</span></h1>
+				</div>
+			</div>
+			<div class="entry__hr">
+				<span class="hr__block hr__block-0"></span>
+				<span class="hr__block hr__block-1"></span>
+				<span class="hr__block hr__block-2"></span>
+				<span class="hr__block hr__block-3"></span>
+				<span class="hr__block hr__block-4"></span>
+				<span class="hr__block hr__block-5"></span>
+				<span class="hr__block hr__block-6"></span>
+				<span class="hr__block hr__block-7"></span>
+			</div>
+			<div class="entry--lower">
+				<div class="lower__content">
+					<p class="poke-description-p1">	A strange seed was planted on its back at birth.</p>
+					<p class="poke-description-p2">The plant sprouts and grows with this Pokémon.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<audio controls class="poke-cry" hidden="true">
+		<source src="static/audio/cry/001.wav" type="audio/wav">
+	</audio>
+	<audio controls class="select-sound" hidden="true">
+		<source src="static/audio/sfx/SFX_PRESS_AB.wav" type="audio/wav">
+	</audio>
+</body>
